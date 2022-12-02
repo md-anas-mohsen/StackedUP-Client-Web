@@ -12,7 +12,7 @@ import ProductDetails from "./components/Product/ProductDetails/ProductDetails";
 import { AppContext } from "./context/AppContext";
 import { useEffect, useState } from "react";
 import { loadUser, clearErrors } from "./actions/userActions";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import store from "./store";
 import PageAlert from "./components/Misc/PageAlert/PageAlert";
 import Login from "./components/User/Login/Login";
@@ -53,7 +53,12 @@ function App() {
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState([1, 100000]);
   const [rating, setRating] = useState(0);
-  const [stripeApiKey, setStripeApiKey] = useState("");
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadUser());
+  }, [dispatch]);
 
   const states = {
     alertState: [alert, setAlert],
@@ -62,7 +67,6 @@ function App() {
     categoryState: [category, setCategory],
     priceState: [price, setPrice],
     ratingState: [rating, setRating],
-    stripeApiKey,
   };
 
   const { user, isAuthenticated, loading } = useSelector((state) => state.auth);

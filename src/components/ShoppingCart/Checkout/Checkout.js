@@ -386,18 +386,6 @@ export default function Checkout({ openState }) {
   const [phoneNo, setPhoneNo] = useState(shippingInfo?.phoneNo || "");
   const [province, setProvince] = useState(shippingInfo?.province || "");
   const [country, setCountry] = useState(shippingInfo?.country || "");
-  const [orderInfo, setOrderInfo] = useState(
-    sessionStorage.getItem("orderInfo") || {}
-  );
-
-  useEffect(() => {
-    if (
-      Object.keys(orderInfo).length === 0 &&
-      orderInfo.constructor === Object
-    ) {
-      setActiveStep(0);
-    }
-  }, [orderInfo]);
 
   useEffect(() => {
     if (activeStep === steps.length) return;
@@ -408,22 +396,6 @@ export default function Checkout({ openState }) {
       setAlert({ type: "error", message: orderError });
       dispatch(clearErrors());
     }
-    if (result && activeStep === 2) {
-      const order = {
-        orderItems: cartItems,
-        shippingInfo,
-        itemsPrice: orderInfo.itemsPrice,
-        taxPrice: orderInfo.taxPrice,
-        totalPrice: orderInfo.totalPrice,
-        paymentInfo: {
-          id: result.paymentIntent.id,
-          status: result.paymentIntent.status,
-        },
-      };
-      dispatch(createOrder(order));
-      setAlert({ type: "success", message: "Order successfully placed" });
-      setActiveStep(steps.length);
-    }
   }, [
     error,
     result,
@@ -431,7 +403,6 @@ export default function Checkout({ openState }) {
     dispatch,
     orderError,
     cartItems,
-    orderInfo,
     shippingInfo,
     activeStep,
   ]);
@@ -443,7 +414,6 @@ export default function Checkout({ openState }) {
     phoneNoState: [phoneNo, setPhoneNo],
     countryState: [country, setCountry],
     provinceState: [province, setProvince],
-    orderInfoState: [orderInfo, setOrderInfo],
   };
 
   const handleNext = () => {
@@ -458,8 +428,6 @@ export default function Checkout({ openState }) {
           country,
         })
       );
-    } else if (activeStep === 1) {
-      saveOrderInfo();
     }
     setActiveStep(activeStep + 1);
   };
@@ -470,17 +438,6 @@ export default function Checkout({ openState }) {
 
   const handleClose = () => {
     setOpenCheckout(false);
-    if (activeStep === steps.length) {
-      sessionStorage.removeItem("orderInfo");
-      setOrderInfo({});
-    }
-    if (activeStep === 2) {
-      setActiveStep(1);
-    }
-  };
-
-  const saveOrderInfo = () => {
-    sessionStorage.setItem("orderInfo", JSON.stringify(orderInfo));
   };
 
   return (

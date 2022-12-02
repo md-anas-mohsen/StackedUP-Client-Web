@@ -77,7 +77,7 @@ export const newReview = (reviewData, productID) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `/api/v1/products/${productID}`,
+      `/api/products/${productID}`,
       reviewData,
       config
     );
