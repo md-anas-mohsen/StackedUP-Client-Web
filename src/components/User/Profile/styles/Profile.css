@@ -1,0 +1,40 @@
+.profile {
+    padding: 25px;
+}
+
+@media screen and (max-width: 500px) {
+    .profile {
+        padding: 0;
+    }   
+}
+
+.profile__bar {
+    background-color: lightslategray;
+}
+
+.profile__main {
+    padding: 10px;
+}
+
+.profile__main > * {
+    padding: 10px 0;
+}
+
+/* .profile__main__header {
+    border-bottom: 1px solid lightgray;
+} */
+
+.profile__main__header > * {
+    margin: 0 20px;
+}
+
+.profile__main__bar > * {
+    text-decoration: none;
+    color: black;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.profile__main__info > * {
+    padding: 20px;
+}

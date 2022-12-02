@@ -1,0 +1,21 @@
+.product__image {
+    width: 100%;
+    max-width: 200px;
+    height: 100px;
+    object-fit: contain;
+    margin: auto;    
+}
+
+.product__info__link {
+    text-decoration: none;
+    color: black;
+}
+
+.product__info__link:hover {
+    color: #F77F00;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+}

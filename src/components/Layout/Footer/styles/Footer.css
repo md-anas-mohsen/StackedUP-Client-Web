@@ -1,0 +1,20 @@
+/* .footer {
+    color: #fff;
+    background-color: #003049;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 5px solid #D62828;
+    box-shadow: 0 -10px 10px -8px #888888;
+} */
+.footer {
+    color: #003049;
+    background-color: #FCBF49;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 5px solid #003049;
+    box-shadow: 0 -10px 10px -8px #888888;
+}

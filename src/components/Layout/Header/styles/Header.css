@@ -1,0 +1,17 @@
+.header {
+    background-color: #003049;
+    /* border-bottom: 5px solid #D62828; */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header__logo {
+    display: flex;
+    padding: 0 5px;
+    color: #FCBF49;
+}
+
+.header__categories {
+    display: flex;
+}

@@ -1,0 +1,25 @@
+.cart__items__header {
+    background-color: #003049;
+    color: white;
+    border-bottom: 5px solid #D62828;
+}
+
+.cart__summary__header {
+    color: #003049;
+    background-color: #FCBF49;
+    border-bottom: 5px solid #003049;
+}
+
+.cart__summary__footer {
+    background-color: #FCBF49;
+    border-top: 5px solid #003049;
+}
+
+.cart__items__footer {
+    background-color: #003049;
+    border-top: 5px solid #D62828;
+}
+
+.cart__items__item__addRemove {
+    padding: 0 25px;
+}

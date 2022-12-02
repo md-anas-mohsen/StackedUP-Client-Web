@@ -1,0 +1,45 @@
+.homeCarousel__item {
+  height: 400px;
+}
+
+.homeCarousel__item__image {
+  position: relative;
+  height: 100%;
+}
+
+.homeCarousel__item__image > img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.homeCarousel__item__image__overlay {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  opacity: 0.8;
+  /* background-color: #003049; */
+  background-color: black;
+  color: white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+@media screen and (max-width: 600px) {
+  .homeCarousel__item {
+    height: 200px;
+  }
+
+  .homeCarousel__item__image__overlay {
+    height: 100%;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .homeCarousel__item__image__overlay__description {
+    display: none;
+  }
+
+  .homeCarousel__item__image__overlay > * {
+    padding: 0 1em;
+  }
+}

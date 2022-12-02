@@ -1,0 +1,41 @@
+.orderDetails__main {
+    padding: 25px;
+}
+
+@media screen and (max-width: 500px) {
+    .orderDetails__main {
+        padding: 0;
+    }   
+}
+
+.orderDetails__main__bar {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.orderDetails__main__heading {
+    padding: 20px;
+}
+
+.orderDetails__main__bar__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.orderDetails__main__bar__label > * {
+    padding: 0 5px;
+}
+
+.orderDetails__main__status {
+    padding: 0px 0;
+}
+
+.orderDetails__main__status > * {
+    padding: 10px 0;
+}
+
+.orderDetails__main__details {
+    padding: 15px;
+}

@@ -1,0 +1,21 @@
+* {
+  margin: 0
+}
+
+.App {
+  background-color: #EAE2B7;
+  /* background-color: #fff; */
+  /* background-color: #f3f3f3;  */
+}
+
+body {
+  background-color: #FCBF49;
+  /* background-color: #003049; */
+}
+
+hr {
+  border-top: 1px solid lightgray;
+  color: lightgray;
+  background-color: lightgray;
+  border-color: lightgray;
+}
