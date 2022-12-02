@@ -86,11 +86,6 @@ function App() {
                 exact
                 component={Profile}
               />
-              <ProtectedRoute
-                path="/myprofile/settings"
-                exact
-                component={Profile}
-              />
               <ProtectedRoute path="/myprofile" exact component={Profile} />
               <ProtectedRoute path="/dashboard" exact component={Dashboard} />
               <Route path="/signin" exact component={Login} />
