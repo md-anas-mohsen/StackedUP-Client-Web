@@ -265,19 +265,12 @@ const OrderDetails = ({ match }) => {
                   )}
                 </Typography>
               </Grid>
-              {/* <Grid item xs={4} md={3}>
-                            <Status status={orderStatus} size="large" />
-                          </Grid> */}
               <Grid item xs={8} md={3}>
                 <Typography
                   className="orderDetails__main__heading"
                   variant="h4"
                 >
                   {!loading && order ? (
-                    // <Status status={
-                    //   paymentInfo ? "Paid"
-                    //   : "Not Paid"
-                    // } size="large" />
                     <Status status={orderStatus} size="large" />
                   ) : (
                     <Skeleton variant="rect" animation="wave" />
@@ -530,21 +523,6 @@ const OrderDetails = ({ match }) => {
                               >
                                 Additional Details
                               </Typography>
-                              <Grid item xs={12}>
-                                <ListItem className={classes.listItem}>
-                                  <ListItemText primary="Payment Status" />
-                                  <Typography
-                                    variant="subtitle1"
-                                    className={classes.total}
-                                  >
-                                    {paymentInfo ? (
-                                      <Status status="Paid" />
-                                    ) : (
-                                      <Status status="Not Paid" />
-                                    )}
-                                  </Typography>
-                                </ListItem>
-                              </Grid>
                               <Grid item xs={12}>
                                 <ListItem className={classes.listItem}>
                                   <ListItemText primary="Placed on" />

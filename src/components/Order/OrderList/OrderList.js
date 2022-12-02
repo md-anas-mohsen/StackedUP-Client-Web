@@ -33,16 +33,9 @@ export const Status = ({ status, size }) => {
           style={size && { fontSize: size === "large" && "25px" }}
         />
       );
-    if (status === DELIVERED || status === "Paid")
+    if (status === DELIVERED)
       return (
         <CheckCircleIcon
-          fontSize="small"
-          style={size && { fontSize: size === "large" && "25px" }}
-        />
-      );
-    if (status === "Not Paid")
-      return (
-        <WarningIcon
           fontSize="small"
           style={size && { fontSize: size === "large" && "25px" }}
         />
@@ -63,9 +56,7 @@ export const Status = ({ status, size }) => {
             ? Info
             : status === DELIVERED
             ? Success
-            : status === IN_TRANSIT
-            ? Orange
-            : status === "Not Paid" && Warning,
+            : status === IN_TRANSIT && Orange,
         color: "white",
         display: "flex",
         padding: "5px",

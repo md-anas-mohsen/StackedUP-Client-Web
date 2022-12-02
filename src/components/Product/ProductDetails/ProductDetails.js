@@ -267,13 +267,6 @@ export default function ProductDetails({ match }) {
                 </div>
               )}
               <div className="productDetails__details__description">
-                <Typography variant="h6">
-                  {loading ? (
-                    <Skeleton animation="wave" />
-                  ) : (
-                    "About The Product:"
-                  )}
-                </Typography>
                 <Typography variant="body1">
                   {loading ? (
                     <Fragment>
