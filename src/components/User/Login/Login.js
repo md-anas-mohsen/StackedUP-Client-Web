@@ -66,7 +66,6 @@ export default function Login({ history }) {
       history.push(`/${redirect}`);
     }
     if (error) {
-      if (error === "Login to view this resource" && !redirect) return;
       setAlert({ message: error, type: "error" });
       dispatch(clearErrors());
     }
