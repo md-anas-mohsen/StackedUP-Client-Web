@@ -21,15 +21,25 @@ import {
 } from "../constants/productConstants";
 
 export const getProducts =
-  (keyword = "", page = 1, price = [1, 10000], category, rating = 0) =>
+  (keyword = "", page = 1, price, category, rating = 0) =>
   async (dispatch) => {
     try {
       dispatch({
         type: ALL_PRODUCTS_REQUEST,
       });
-      let link = `/api/products?keyword=${keyword.trim()}&page=${page}&priceGTE=${
-        price[0]
-      }&priceLTE=${price[1]}&ratings=${rating}&limit=${PAGE_LIMIT}`;
+      let link = `/api/products?keyword=${keyword.trim()}&page=${page}&limit=${PAGE_LIMIT}`;
+
+      if (!!price && !!price[0]) {
+        link += `&priceGTE=${price[0]}`;
+      }
+
+      if (!!price && !!price[1]) {
+        link += `&priceLTE=${price[1]}`;
+      }
+
+      if (!!rating) {
+        link += `&ratings=${rating}`;
+      }
 
       if (category) {
         link += `&category=${category}`;

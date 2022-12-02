@@ -51,7 +51,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [keyword, setKeyword] = useState("");
   const [category, setCategory] = useState("");
-  const [price, setPrice] = useState([1, 100000]);
+  const [price, setPrice] = useState([0, 0]);
   const [rating, setRating] = useState(0);
 
   const dispatch = useDispatch();
@@ -70,29 +70,6 @@ function App() {
   };
 
   const { user, isAuthenticated, loading } = useSelector((state) => state.auth);
-
-  useEffect(() => {
-    const queryStringObject = {
-      keyword: keyword ? `keyword=${keyword}` : "",
-      category: category ? `category=${category}` : "",
-      price:
-        price[0] > 1 || price[1] < 100000
-          ? `price[gte]=${price[0]}&price[lte]=${price[1]}`
-          : "",
-      rating: rating > 0 ? `rating[gte]=${rating}` : "",
-    };
-    let queryString = "";
-    for (const queryParam in queryStringObject) {
-      if (queryStringObject[queryParam] !== "") {
-        if (!queryString) {
-          queryString += `${queryStringObject[queryParam]}`;
-        } else {
-          queryString += `&${queryStringObject[queryParam]}`;
-        }
-      }
-    }
-    setSearchQuery(queryString);
-  }, [keyword, category, price, rating]);
 
   return (
     <ThemeProvider theme={theme}>

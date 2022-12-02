@@ -346,7 +346,6 @@ const Header = () => {
                   setCategory("");
                   setKeyword("");
                   setRating(0);
-                  setPrice([1, 1000]);
                   setSearchQuery("");
                 }}
               >
